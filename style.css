@@ -1,0 +1,139 @@
+
+html {
+    font-size: 16px;
+    /* font-family: Ubuntu; */
+}
+
+:root {
+    --nav-width: 80%;
+    --nav-link-width: 40%;
+    --nav-display: flex;
+    --hamburger-display: none;
+    --nav-button-display: block;
+
+    --primary-dark-blue: hsl(228, 39%, 23%);
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src:
+        local('assets/fonts/Ubuntu-Bold.ttf'),
+        url('assets/fonts/Ubuntu-Bold.ttf')
+        format("truetype");
+        font-weight: 700;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: Ubuntu-medium;
+    src:
+        local('assets/fonts/Ubuntu-Medium.ttf'),
+        url('assets/fonts/Ubuntu-Medium.ttf')
+        format("truetype");
+        font-weight: 500;
+        font-style: normal;
+}
+
+@font-face {
+    font-family: Ubuntu-regular;
+    src:
+        local('assets/fonts/Ubuntu-Regular.ttf'),
+        url('assets/fonts/Ubuntu-Regular.ttf')
+        format("truetype");
+        font-weight: 400;
+        font-style: normal;
+}
+
+@media only screen and (max-width: 1050px) {
+    :root {
+        --nav-link-width: 55%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    :root {
+        /* --nav-width: 90%; */
+        --nav-display: none;
+        --nav-button-display: none;
+        --hamburger-display: block;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --nav-width: 90%;
+        /* --nav-display: none;
+        --nav-button-display: none;
+        --hamburger-display: block; */
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    :root {
+        --nav-width: 90%;
+    }
+}
+
+
+
+body {
+    display: flex;
+    background-color: hsl(0, 0%, 98%);
+    background-image: url("assets/images/bg-tablet-pattern.svg"), url("assets/images/bg-tablet-pattern.svg");
+    background-position: right top, left bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 120% 30%, 0% 150%;
+    background-size: 50%;
+    background-attachment: scroll;
+    overflow-y: visible;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    width: var(--nav-width);
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+    margin: 0 auto;
+    margin-top: 27px !important;
+
+    .hamburger {
+        display: var(--hamburger-display);
+    }
+}
+
+.logo {
+    /* width: 12%; */
+    display: flex;
+
+    img {
+        width: 120px;
+    }
+}
+
+.navigation {
+    display: var(--nav-display);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid green; */
+    width: var(--nav-link-width);
+
+    font-family: Ubuntu-medium;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    color: var(--primary-dark-blue);
+}
+
+nav button {
+    display: var(--nav-button-display);
+    font-family: Ubuntu;
+    padding: 12px;
+    border-radius: 26px;
+    border: none;
+    background-color: hsl(12, 88%, 59%);
+    color: hsl(0, 0%, 98%);
+    cursor: pointer;
+}

@@ -69,7 +69,9 @@ Use this section to recap over some of your major learnings while working throug
 
 CSS variables,
 Units/Measurements,
-Media queries
+Media queries,
+flex box,
+margin
 
 To see how you can add code snippets, see below:
 
