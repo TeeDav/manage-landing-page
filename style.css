@@ -42,7 +42,7 @@ html {
 }
 
 @font-face {
-    font-family: BeVietnamePro-Regular;
+    font-family: BeVietnamPro-Regular;
     src:
         local('assets/fonts/BeVietnamPro-Regular.ttf'),
         url('assets/fonts/BeVietnamPro-Regular.ttf')
@@ -176,7 +176,8 @@ nav button{
     display: var(--nav-button-display);
 }
 
-.hero {
+.hero,
+.product-desc {
     display: flex;
     flex-direction: var(--hero-direction);
     justify-content: space-between;
@@ -184,6 +185,10 @@ nav button{
     margin: 0 auto;
     margin-top: var(--hero-margin-top);
     width: var(--display-width);
+}
+
+.product-desc {
+    align-items: flex-start !important;
 }
 
 .hero-copy {
@@ -196,7 +201,7 @@ nav button{
     }
 
     p {
-        font-family: BeVietnamePro-Regular;
+        font-family: BeVietnamPro-Regular;
         font-size: 1rem;
         color: var(--neutral-dark-grayish-blue);  
         line-height: 1.70em; 
@@ -218,4 +223,80 @@ nav button{
     background-size: 104%;
     background-repeat: no-repeat;
     background-position-y: 11%;
+}
+
+.main-desc {
+    width: 38%;
+    h2 {
+        font-family: BeVietnamPro-Medium;
+        color: var(--primary-dark-blue);
+        width: 100%;
+        font-size: 2rem;
+        /* word-spacing: 0.15em;` */
+    }
+
+    p {
+        font-family: BeVietnamPro-Regular;
+        font-size: 1rem;
+        color: var(--neutral-dark-grayish-blue);  
+        line-height: 1.70em; 
+        width: 82%;
+        margin-top: 0em;
+    }
+}
+
+.list-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    width: 43%;
+
+    .list-el {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .list-number {
+            font-family: BeVietnamPro-Medium;
+            font-size: 0.875rem;
+            color: hsl(0, 0%, 98%);
+            height: 0.875em;
+            text-align: center;
+            /* vertical-align: middle; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: hsl(12, 88%, 59%);
+            padding: 13px 21px;
+            border-radius: 18px;
+            width: 2em;
+        }
+
+        .desc {
+            display: flex;
+            flex-direction: column;
+            width: 78%;
+            font-size: 1rem;
+        }
+
+        .desc-heading {
+            font-family: BeVietnamPro-Medium;
+            color: var(--primary-dark-blue);
+            margin: 9px 0px 0px 0px;
+        }
+
+        .desc-copy {
+            font-family: BeVietnamPro-Regular;
+            color: var(--neutral-dark-grayish-blue);
+            margin: 9px 0px 0px 0px;
+
+        }
+    }
+}
+
+.list-desc .list-el:nth-child(2),
+.list-desc .list-el:nth-child(3) {
+    margin-top: 20px;
 }
