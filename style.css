@@ -23,6 +23,10 @@ html {
     --product-desc-direction: row;
     --list-number-width: auto;
     --desc-body-col-start: 2;
+    --review-card-width: 38%;
+    --banner-direction: row;
+    --banner-heading-width: 300px;
+    --banner-copy-width: 80%;
 
     --primary-dark-blue: hsl(228, 39%, 23%);
     --neutral-dark-grayish-blue: hsl(227, 12%, 61%);
@@ -62,6 +66,7 @@ html {
     :root {
         --nav-link-width: 55%;
         --main-desc-width: 45%;
+        --review-card-width: 50%;
     }
 }
 
@@ -82,6 +87,9 @@ html {
         --hamburger-display: block; */
         --hero-image-width: 100%;
         --hero-body-copy-width: 100%;
+        --banner-heading-width: 100%;
+        --banner-copy-width: 76%;
+
     }
 }
 
@@ -115,6 +123,8 @@ html {
         --hero-image-width: 100%;
         --hero-height: 310px;
         --hero-text-align: center;
+        --review-card-width: 90%;
+        --banner-direction: column;
     }
 }
 
@@ -183,10 +193,13 @@ nav {
 }
 
 nav button,
-.hero button {
-    font-family: BeVietnamPro-Bold;
+.hero button,
+.review-section button,
+.banner-copy button {
+    font-family: BeVietnamPro-Medium;
     padding: 12px;
     border-radius: 26px;
+    width: 120px;
     border: none;
     background-color: hsl(12, 88%, 59%);
     color: hsl(0, 0%, 98%);
@@ -333,3 +346,102 @@ nav button{
 .list-desc .list-el:nth-child(3) {
     margin-top: 2em;
 }
+
+.review-section {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviews-heading {
+    width: fit-content;
+    margin: 0 auto;
+    font-family: BeVietnamPro-Medium;
+    color: var(--primary-dark-blue);
+    font-size: 2rem;
+}
+
+.testimonials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    overflow-x: scroll;
+    margin: 4rem auto 0 auto;
+    margin-bottom: 45px;
+}
+
+.review-card {
+    display: block;
+    flex-shrink: 0;
+    width: var(--review-card-width);
+    margin: 0 10px;
+    padding: 15px 25px 30px 20px;
+    background-color: hsl(0, 0%, 95%);
+    /* border-radius: 15px; */
+}
+
+.review-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .reviewer-name {
+        font-family: BeVietnamPro-Medium;
+        color: var(--primary-dark-blue);
+    }
+    
+    .review {
+        font-family: BeVietnamPro-Regular;
+        color: var(--neutral-dark-grayish-blue);
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.reviewer-img {
+    position: absolute;
+}
+
+.banner {
+    width: 100vw;
+    background-color: hsl(12, 88%, 59%);
+    margin-top: 50px;
+    height: fit-content;
+    background-image: url(assets/images/bg-simplify-section-desktop.svg);
+
+}
+
+.banner-copy {
+    display: flex;
+    flex-direction: var(--banner-direction);
+    justify-content: space-between;
+    align-content: center;
+    width: var(--banner-copy-width);
+    margin: 0 auto;
+    padding: 20px 20px;
+
+    h2 {
+        font-family: BeVietnamPro-Medium;
+        color: hsl(0, 0%, 98%);
+        width: var(--banner-heading-width);
+        font-size: 2rem;
+        text-align: var(--main-text-align); 
+    }
+
+    button {
+        height: fit-content;
+        align-self: center;
+        background-color: hsl(0, 0%, 98%) !important;
+        color: hsl(12, 88%, 59%);
+        flex-grow: 0;
+        text-wrap-mode: nowrap;
+    }
+}
+
+
+
+
