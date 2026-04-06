@@ -23,10 +23,12 @@ html {
     --product-desc-direction: row;
     --list-number-width: auto;
     --desc-body-col-start: 2;
-    --review-card-width: 38%;
+    --review-card-width: 31%;
     --banner-direction: row;
     --banner-heading-width: 300px;
     --banner-copy-width: 80%;
+    --body-background-position: 109% -7%, -30% 80%;
+     --body-background-size: 50%;
 
     --primary-dark-blue: hsl(228, 39%, 23%);
     --neutral-dark-grayish-blue: hsl(227, 12%, 61%);
@@ -125,12 +127,16 @@ html {
         --hero-text-align: center;
         --review-card-width: 90%;
         --banner-direction: column;
+        --body-background-position: -172% -3%, 271px 30%;
+        --body-background-size: 110%, 61%;
     }
 }
 
 @media only screen and (max-width: 375px) {
     :root {
         --hero-height: 77vw;
+        --body-background-position: -124% -1%, 236px 31%;
+        --body-background-size: 110%, 76%;
     }
 }
 
@@ -143,10 +149,11 @@ body {
     background-image: url("assets/images/bg-tablet-pattern.svg"), url("assets/images/bg-tablet-pattern.svg");
     background-position: right top, left bottom;
     background-repeat: no-repeat, no-repeat;
-    background-position: 120% 30%, 0% 150%;
-    background-size: 50%;
+    background-position: var(--body-background-position);
+    background-size: var(--body-background-size);
     background-attachment: scroll;
     overflow-y: visible;
+    overflow-x: hidden;
 }
 
 nav {
@@ -189,6 +196,10 @@ nav {
 
     p {
         cursor: pointer;
+
+        &:hover {
+            color: hsl(227, 12%, 61%);
+        }
     }
 }
 
@@ -204,6 +215,11 @@ nav button,
     background-color: hsl(12, 88%, 59%);
     color: hsl(0, 0%, 98%);
     cursor: pointer;
+    box-shadow: 0px 7.5px 13.5px -3px hsl(12deg 94.45% 74.26%);
+
+    &:hover {
+        background-color: hsl(12, 96%, 71%);
+    }
 }
 
 nav button{
@@ -367,10 +383,17 @@ nav button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 90vw;
+    width: 100vw;
     overflow-x: scroll;
-    margin: 4rem auto 0 auto;
+    margin: 4rem auto;
     margin-bottom: 45px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .review-card {
@@ -380,6 +403,9 @@ nav button{
     margin: 0 10px;
     padding: 15px 25px 30px 20px;
     background-color: hsl(0, 0%, 95%);
+    /* scroll-snap-align: start; */
+    scroll-snap-stop: always;
+    scroll-behavior: smooth;
     /* border-radius: 15px; */
 }
 
@@ -388,6 +414,7 @@ nav button{
     flex-direction: column;
     align-items: center;
     width: 100%;
+    /* cursor: pointer; */
 
     .reviewer-name {
         font-family: BeVietnamPro-Medium;
@@ -439,6 +466,12 @@ nav button{
         color: hsl(12, 88%, 59%);
         flex-grow: 0;
         text-wrap-mode: nowrap;
+
+        &:hover {
+            background-color: hsl(0, 0%, 98%) !important;
+            color: hsl(12, 96%, 71%);
+        }
+        
     }
 }
 
