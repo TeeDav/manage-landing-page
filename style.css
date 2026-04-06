@@ -389,7 +389,7 @@ nav button{
     margin-bottom: 45px;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    scroll-snap-type: x mandatory;
+    /* scroll-snap-type: x mandatory; */
 
     &::-webkit-scrollbar {
         display: none;
@@ -404,8 +404,8 @@ nav button{
     padding: 15px 25px 30px 20px;
     background-color: hsl(0, 0%, 95%);
     /* scroll-snap-align: start; */
-    scroll-snap-stop: always;
-    scroll-behavior: smooth;
+    /* scroll-snap-stop: always;
+    scroll-behavior: smooth; */
     /* border-radius: 15px; */
 }
 
