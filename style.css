@@ -16,6 +16,13 @@ html {
     --hero-margin-top: 4rem;
     --hero-body-copy-width: 70%;
     --hero-text-align: left;
+    --copy-line-height: 1.70em;
+    --main-desc-width: 38%;
+    --main-text-align: left;
+    --main-paragraph-width: 82%;
+    --product-desc-direction: row;
+    --list-number-width: auto;
+    --desc-body-col-start: 2;
 
     --primary-dark-blue: hsl(228, 39%, 23%);
     --neutral-dark-grayish-blue: hsl(227, 12%, 61%);
@@ -54,6 +61,7 @@ html {
 @media only screen and (max-width: 1050px) {
     :root {
         --nav-link-width: 55%;
+        --main-desc-width: 45%;
     }
 }
 
@@ -77,6 +85,29 @@ html {
     }
 }
 
+@media only screen and (max-width: 620px) {
+    :root {
+        --product-desc-direction: column;
+        --main-paragraph-width: 100%;
+        --main-desc-width: 100%;
+        --main-text-align: center;
+        --list-number-width: 62.5px;
+        --desc-body-col-start: 1;
+    }
+}
+
+@media only screen and (max-width: 620px) and (min-width: 424px){
+     :root {
+        --hero-direction: column;
+        --hero-image-width: 79%;
+        --hero-height: 340px;
+        --hero-margin-top: 0rem;
+        --hero-text-align: center;
+     }
+
+     
+}
+
 @media only screen and (max-width: 425px) {
     :root {
         --display-width: 90%;
@@ -91,16 +122,6 @@ html {
     :root {
         --hero-height: 77vw;
     }
-}
-
-@media only screen and (max-width: 620px) and (min-width: 426px){
-     :root {
-        --hero-direction: column;
-        --hero-image-width: 79%;
-        --hero-height: 340px;
-        --hero-margin-top: 0rem;
-        --hero-text-align: center;
-     }
 }
 
 
@@ -179,7 +200,6 @@ nav button{
 .hero,
 .product-desc {
     display: flex;
-    flex-direction: var(--hero-direction);
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
@@ -187,8 +207,13 @@ nav button{
     width: var(--display-width);
 }
 
+.hero {
+    flex-direction: var(--hero-direction);
+}
+
 .product-desc {
     align-items: flex-start !important;
+    flex-direction: var(--product-desc-direction);
 }
 
 .hero-copy {
@@ -204,7 +229,7 @@ nav button{
         font-family: BeVietnamPro-Regular;
         font-size: 1rem;
         color: var(--neutral-dark-grayish-blue);  
-        line-height: 1.70em; 
+        line-height: var(--copy-line-height); 
         width: var(--hero-body-copy-width);
         margin-top: 0em;
     }
@@ -226,21 +251,23 @@ nav button{
 }
 
 .main-desc {
-    width: 38%;
+    width: var(--main-desc-width);
+    text-align: var(--main-text-align); 
     h2 {
         font-family: BeVietnamPro-Medium;
         color: var(--primary-dark-blue);
         width: 100%;
         font-size: 2rem;
         /* word-spacing: 0.15em;` */
+        margin-top: 0px;
     }
 
     p {
         font-family: BeVietnamPro-Regular;
         font-size: 1rem;
         color: var(--neutral-dark-grayish-blue);  
-        line-height: 1.70em; 
-        width: 82%;
+        line-height: var(--copy-line-height); 
+        width: var(--main-paragraph-width);
         margin-top: 0em;
     }
 }
@@ -250,7 +277,7 @@ nav button{
     flex-direction: column;
     justify-content: space-between;
     height: fit-content;
-    width: 43%;
+    width: calc(var(--main-desc-width) + 12%);
 
     .list-el {
         display: flex;
@@ -269,34 +296,40 @@ nav button{
             align-items: center;
             justify-content: center;
             background-color: hsl(12, 88%, 59%);
-            padding: 13px 21px;
+            padding: 13px 17px;
             border-radius: 18px;
             width: 2em;
         }
 
         .desc {
-            display: flex;
-            flex-direction: column;
-            width: 78%;
+            display: grid;
+            grid-template-columns: var(--list-number-width) auto;
+            /* width: 78%; */
             font-size: 1rem;
+            grid-column-gap: 1em;
+            /* grid-row-gap: 1em; */
         }
 
         .desc-heading {
             font-family: BeVietnamPro-Medium;
             color: var(--primary-dark-blue);
-            margin: 9px 0px 0px 0px;
+            margin: 0px 0px 0px 0px;
+            align-self: center;
         }
 
         .desc-copy {
             font-family: BeVietnamPro-Regular;
             color: var(--neutral-dark-grayish-blue);
-            margin: 9px 0px 0px 0px;
-
+            margin: 0px 0px 0px 0px;
+            grid-column-start:var(--desc-body-col-start); 
+            grid-column-end: 3;
+            /* width: 100%; */
+            line-height: var(--copy-line-height);
         }
     }
 }
 
 .list-desc .list-el:nth-child(2),
 .list-desc .list-el:nth-child(3) {
-    margin-top: 20px;
+    margin-top: 2em;
 }
