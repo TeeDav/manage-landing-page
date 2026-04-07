@@ -249,9 +249,9 @@ nav button{
     width: 100%;
     text-align: var(--hero-text-align);
     h1 {
-        font-family: BeVietnamPro-Bold;
+        font-family: BeVietnamPro-Bold !important;
         font-size: 3rem;
-        color: var(--primary-dark-blue);
+        color: var(--primary-dark-blue) !important;
     }
 
     p {
@@ -466,7 +466,6 @@ nav button{
         color: hsl(12, 88%, 59%);
         flex-grow: 0;
         /* text-wrap-mode: nowrap; */
-
         &:hover {
             background-color: hsl(0, 0%, 98%) !important;
             color: hsl(12, 96%, 71%);
