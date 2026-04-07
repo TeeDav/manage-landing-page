@@ -12,8 +12,8 @@ html {
     --nav-button-display: block;
     --hero-image-width: 100%;
     --hero-direction: row;
-    --hero-height: 37vw;
-    --hero-margin-top: 4rem;
+    --hero-height: 40vw;
+    --hero-margin-top: 6rem;
     --hero-body-copy-width: 70%;
     --hero-text-align: left;
     --copy-line-height: 1.70em;
@@ -113,7 +113,7 @@ html {
      :root {
         --hero-direction: column;
         --hero-image-width: 79%;
-        --hero-height: 340px;
+        --hero-height: 386px;
         --hero-margin-top: 0rem;
         --hero-text-align: center;
      }
@@ -126,7 +126,8 @@ html {
         --display-width: 90%;
         --hero-direction: column-reverse;
         --hero-image-width: 100%;
-        --hero-height: 310px;
+        --hero-height: 340px;
+        --hero-margin-top: 3rem;
         --hero-text-align: center;
         --review-card-width: 90%;
         --banner-direction: column;
