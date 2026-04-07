@@ -187,7 +187,6 @@ nav {
     align-items: center;
     /* border: 1px solid green; */
     width: var(--nav-link-width);
-
     font-family: BeVietnamPro-Medium;
     font-size: 0.75rem;
     /* font-weight: 400; */
@@ -196,7 +195,6 @@ nav {
 
     p {
         cursor: pointer;
-
         &:hover {
             color: hsl(227, 12%, 61%);
         }
