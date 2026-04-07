@@ -465,7 +465,7 @@ nav button{
         background-color: hsl(0, 0%, 98%) !important;
         color: hsl(12, 88%, 59%);
         flex-grow: 0;
-        text-wrap-mode: nowrap;
+        /* text-wrap-mode: nowrap; */
 
         &:hover {
             background-color: hsl(0, 0%, 98%) !important;
