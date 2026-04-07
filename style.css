@@ -22,13 +22,14 @@ html {
     --main-paragraph-width: 82%;
     --product-desc-direction: row;
     --list-number-width: auto;
+    --list-desc-width: 50%;
     --desc-body-col-start: 2;
     --review-card-width: 31%;
     --banner-direction: row;
     --banner-heading-width: 300px;
     --banner-copy-width: 80%;
     --body-background-position: 109% -7%, -30% 80%;
-     --body-background-size: 50%;
+    --body-background-size: 50%;
 
     --primary-dark-blue: hsl(228, 39%, 23%);
     --neutral-dark-grayish-blue: hsl(227, 12%, 61%);
@@ -69,6 +70,7 @@ html {
         --nav-link-width: 55%;
         --main-desc-width: 45%;
         --review-card-width: 50%;
+        --list-desc-width: 45%;
     }
 }
 
@@ -101,6 +103,7 @@ html {
         --main-paragraph-width: 100%;
         --main-desc-width: 100%;
         --main-text-align: center;
+        --list-desc-width: 100%;
         --list-number-width: 62.5px;
         --desc-body-col-start: 1;
     }
@@ -154,6 +157,7 @@ body {
     background-attachment: scroll;
     overflow-y: visible;
     overflow-x: hidden;
+    margin:0px;
 }
 
 nav {
@@ -304,7 +308,7 @@ nav button{
     flex-direction: column;
     justify-content: space-between;
     height: fit-content;
-    width: calc(var(--main-desc-width) + 12%);
+    width: var(--list-desc-width);
 
     .list-el {
         display: flex;
@@ -367,6 +371,7 @@ nav button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
 }
 
 .reviews-heading {
@@ -381,7 +386,7 @@ nav button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     overflow-x: scroll;
     margin: 4rem auto;
     margin-bottom: 45px;
