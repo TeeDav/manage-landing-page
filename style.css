@@ -28,6 +28,7 @@ html {
     --list-desc-width: 50%;
     --desc-body-col-start: 2;
     --h2-size: 2rem;
+    --review-section-mt: 25vmin;
     --review-card-width: 31%;
     --banner-direction: row;
     --banner-heading-width: 300px;
@@ -74,6 +75,11 @@ html {
     }
 }
 
+@media only screen and (max-width: 1024px) and (min-width: 424px) {
+:root {
+        --review-section-mt: 18vmin;
+    }
+}
 @media only screen and (max-width: 1050px) {
     :root {
         --nav-link-width: 55%;
@@ -101,6 +107,7 @@ html {
         --hero-margin-top: 1rem;
         --hero-image-width: 100%;
         --hero-body-copy-width: 100%;
+        --copy-line-height: 1.75em;
         --banner-heading-width: 100%;
         --banner-copy-width: 76%;
 
@@ -386,7 +393,7 @@ nav button{
 }
 
 .review-section {
-    margin-top: 10rem;
+    margin-top: var(--review-section-mt);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -488,6 +495,7 @@ nav button{
         background-color: hsl(0, 0%, 98%) !important;
         color: hsl(12, 88%, 59%);
         flex-grow: 0;
+        box-shadow: none !important;
         /* text-wrap-mode: nowrap; */
         &:hover {
             background-color: hsl(0, 0%, 98%) !important;
