@@ -19,7 +19,7 @@ flex box and grids
 
 ### Author
 
-- Twitter - [@taligwo](https://www.twitter.com/teedav)
-- LinkedIn - [my LinkedIn profile](https://ng.linkedin.com/in/tobechukwu-aligwo)
+- [X account](https://www.twitter.com/taligwo)
+- [my LinkedIn profile](https://ng.linkedin.com/in/tobechukwu-aligwo)
 
 
