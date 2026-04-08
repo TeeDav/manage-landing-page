@@ -14,16 +14,20 @@ html {
     --hero-direction: row;
     --hero-height: 40vw;
     --hero-margin-top: 6rem;
+    --hero-heading-size: 3rem;
     --hero-body-copy-width: 70%;
     --hero-text-align: left;
-    --copy-line-height: 1.70em;
+    --copy-line-height: 1.7em;
     --main-desc-width: 38%;
     --main-text-align: left;
     --main-paragraph-width: 82%;
     --product-desc-direction: row;
+    --product-margin-top: 13.5vmin;
+    --list-mt: 0vmin;
     --list-number-width: auto;
     --list-desc-width: 50%;
     --desc-body-col-start: 2;
+    --h2-size: 2rem;
     --review-card-width: 31%;
     --banner-direction: row;
     --banner-heading-width: 300px;
@@ -64,6 +68,11 @@ html {
         font-weight: 400;
         font-style: normal;
 }
+@media only screen and (max-width: 1024px) {
+    :root {
+        --hero-margin-top: 1.625rem;
+    }
+}
 
 @media only screen and (max-width: 1050px) {
     :root {
@@ -89,6 +98,7 @@ html {
         /* --nav-display: none;
         --nav-button-display: none;
         --hamburger-display: block; */
+        --hero-margin-top: 1rem;
         --hero-image-width: 100%;
         --hero-body-copy-width: 100%;
         --banner-heading-width: 100%;
@@ -103,6 +113,7 @@ html {
         --main-paragraph-width: 100%;
         --main-desc-width: 100%;
         --main-text-align: center;
+        --list-mt: 5.25vmin;
         --list-desc-width: 100%;
         --list-number-width: 62.5px;
         --desc-body-col-start: 1;
@@ -112,9 +123,9 @@ html {
 @media only screen and (max-width: 620px) and (min-width: 424px){
      :root {
         --hero-direction: column;
+        --hero-margin-top: 1.7rem;
         --hero-image-width: 79%;
         --hero-height: 386px;
-        --hero-margin-top: 0rem;
         --hero-text-align: center;
      }
 
@@ -124,11 +135,15 @@ html {
 @media only screen and (max-width: 425px) {
     :root {
         --display-width: 90%;
+        --hero-heading-size: 2.375rem;
         --hero-direction: column-reverse;
         --hero-image-width: 100%;
         --hero-height: 340px;
         --hero-margin-top: 3rem;
         --hero-text-align: center;
+        --copy-line-height: 1.875rem;
+        --product-margin-top: 20vmin;
+        --h2-size: 2rem;
         --review-card-width: 90%;
         --banner-direction: column;
         --body-background-position: -172% -3%, 271px 30%;
@@ -139,6 +154,7 @@ html {
 @media only screen and (max-width: 375px) {
     :root {
         --hero-height: 77vw;
+        --hero-margin-top: 2.5rem;
         --body-background-position: -124% -1%, 236px 31%;
         --body-background-size: 110%, 76%;
     }
@@ -235,17 +251,18 @@ nav button{
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    margin-top: var(--hero-margin-top);
     width: var(--display-width);
 }
 
 .hero {
     flex-direction: var(--hero-direction);
+    margin-top: var(--hero-margin-top);
 }
 
 .product-desc {
     align-items: flex-start !important;
     flex-direction: var(--product-desc-direction);
+    margin-top: var(--product-margin-top);
 }
 
 .hero-copy {
@@ -253,7 +270,7 @@ nav button{
     text-align: var(--hero-text-align);
     h1 {
         font-family: BeVietnamPro-Bold !important;
-        font-size: 3rem;
+        font-size: var(--hero-heading-size);
         color: var(--primary-dark-blue) !important;
     }
 
@@ -289,7 +306,7 @@ nav button{
         font-family: BeVietnamPro-Medium;
         color: var(--primary-dark-blue);
         width: 100%;
-        font-size: 2rem;
+        font-size: var(--h2-size);
         /* word-spacing: 0.15em;` */
         margin-top: 0px;
     }
@@ -310,6 +327,7 @@ nav button{
     justify-content: space-between;
     height: fit-content;
     width: var(--list-desc-width);
+    margin-top: var(--list-mt);
 
     .list-el {
         display: flex;
@@ -357,6 +375,7 @@ nav button{
             grid-column-end: 3;
             /* width: 100%; */
             line-height: var(--copy-line-height);
+            margin-top: 0.5em;
         }
     }
 }
@@ -367,7 +386,7 @@ nav button{
 }
 
 .review-section {
-    margin-top: 4rem;
+    margin-top: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -380,7 +399,7 @@ nav button{
     margin: 0 auto;
     font-family: BeVietnamPro-Medium;
     color: var(--primary-dark-blue);
-    font-size: 2rem;
+    font-size: var(--h2-size);
 }
 
 .testimonials {
