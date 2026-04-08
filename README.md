@@ -6,7 +6,7 @@ This is my solution to the [Manage landing page challenge on Frontend Mentor](ht
 
 
 ### Screenshot
-![](assets/images/Manage Landing page.PNG)
+![](assets/images/Manage Landing page.png)
 
 
 ### What I learned
